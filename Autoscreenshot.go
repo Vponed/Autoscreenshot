@@ -16,9 +16,7 @@ func main() {
   browser_options := playwright.BrowserTypeLaunchOptions{Headless: &headless} // браузер будет запускаться в видимом режиме
 	var anim playwright.ScreenshotAnimations = "disabled" // отключим анимацию в элементе
 	var waituntstat playwright.WaitUntilState = "commit"  // не будем ждать загрузки страницы
-	// path := "/home/z/Code/Go/autoscreenshot/fear&greed.png" // путь для сохранения скриншота
-	path := "/home/z/.cxoffice/Копия_QUIK/drive_c/Program Files/MetaTrader 5/MQL5/Files/Screen/fear&greed.png"
-	
+	path := "/Screen/fear&greed.png"  // путь для сохранения скриншота	
 	pw, err := playwright.Run()                                                 // поехали
 	her(err, "could not start playwright:")
 	browser, err := pw.Chromium.Launch(browser_options) // выбираем Chromium
