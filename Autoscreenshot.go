@@ -25,10 +25,8 @@ func main() {
 	her(err, "could not create page:")
 	_, err = page.Goto("https://edition.cnn.com/markets/fear-and-greed", playwright.PageGotoOptions{WaitUntil: &waituntstat}) // открываем страницу
 	her(err, "could not goto:")
-	// //div[@class='market-fng-gauge market-fng-gauge']
 	_, err = page.WaitForSelector(`xpath=id("fear-and-greed-dial")`) // ожидаем подгрузки нужной части страницы
 	her(err, "Could not load d page:")
-	// locator, _ := page.Locator(`xpath=id("fear-and-greed-dial")`)
 	locator, _ := page.Locator(`xpath=//div[@class="market-fng-gauge market-fng-gauge"]`)   // выбираем локатор
 	locator.Screenshot(playwright.LocatorScreenshotOptions{Path: &path, Animations: &anim}) // делаем и сохраняем скриншот
 	her(err, "could not create screenshot:")
